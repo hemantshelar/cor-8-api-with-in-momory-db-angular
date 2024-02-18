@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="mb-3 mt-3">
+        <label for="an">Article Name</label>
+        <input  [(ngModel)]="newArticle.name" type="text" id="name" class="form-control" placeholder="Article name">
+    </div>
+    <div class="mb-3">
+        <label for="desc">Desccription</label>
+        <textarea [(ngModel)]="newArticle.description" id="description" cols="30" rows="3" class="form-control"></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="price">Unit Price</label>
+        <input [(ngModel)]="newArticle.price" type="number" class="form-control">
+    </div>
+    <div class="container">
+        <div class="row">
+            <button class="btn btn-success"(click)="saveArticle()">Save</button>
+        </div>
+    </div>
+    <div>
+        {{newArticle | json}}
+    </div>
+</div>
