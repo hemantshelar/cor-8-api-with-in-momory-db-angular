@@ -1,20 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Article } from '../StoresdbModels/Article';
-import { ArticleService } from '../services/article.service';
+import { Article } from '../../StoresdbModels/Article';
+import { ArticleService } from '../../services/article.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SalesOrgService } from '../services/sales-org.service';
-import { SalesOrg } from '../Models/SalesOrg';
+import { SalesOrgService } from '../../services/sales-org.service';
+import { SalesOrg } from '../../Models/SalesOrg';
 
 @Component({
-  selector: 'app-article',
+  selector: 'app-add-update-article',
   standalone: true,
   imports: [CommonModule,FormsModule,HttpClientModule],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.css'
+  templateUrl: './add-update-article.component.html',
+  styleUrl: './add-update-article.component.css'
 })
-export class ArticleComponent {
+export class AddUpdateArticleComponent {
   existingSalesOrgs: SalesOrg[] = [];
   newArticle: Article = new Article();
   articalSaveMessage: string = "Pelase add article details and click on save.";

@@ -15,8 +15,12 @@ export class ArticleService {
    }
 
   saveArticle(newArticle: Article): Observable<any>{
-
     var endopoint = `${environment.storesAPI}/articles`
     return  this.http.post(endopoint,newArticle);
+  }
+
+  getArticles(): Observable<any>{
+    var endopoint = `${environment.storesAPI}/articles`
+    return  this.http.get(endopoint);
   }
 }
