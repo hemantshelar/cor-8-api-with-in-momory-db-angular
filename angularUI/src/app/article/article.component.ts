@@ -27,7 +27,6 @@ export class ArticleComponent {
   }
   ngOnInit(): void {
     this.loadData();
-
   }
 
   ngAfterViewInit(){

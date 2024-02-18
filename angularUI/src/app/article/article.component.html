@@ -33,7 +33,15 @@
     </div>
     <div class="mb-3">
         <label for="salesOrgId">Sales Organization</label>
-        <input [(ngModel)]="newArticle.salesOrgId" type="number" class="form-control">
+        <!-- <input [(ngModel)]="newArticle.salesOrgId" type="number" class="form-control"> -->
+        <div class="input-group mb-3">
+        <select [(ngModel)]="newArticle.salesOrgId" class="form-control">
+            <option *ngFor="let so of existingSalesOrgs" value="{{so.id}}">{{so.name}}</option>
+        </select>
+        <button class="btn btn-success" (click)="loadData()">Refresh</button>
+
+
+        </div>
     </div>
     <div class="container">
         <div class="row">

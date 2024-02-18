@@ -4,20 +4,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { appSettings } from '../Models/AppSettings';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticleService {
-  baseUrl: string = "";
 
   constructor(private http: HttpClient) {
-    this.baseUrl = appSettings.storesApi;
    }
 
   saveArticle(newArticle: Article): Observable<any>{
 
-    var endopoint = `${this.baseUrl}\article`
-    return  this.http.post(appSettings.storesApi,newArticle);
+    var endopoint = `${environment.storesAPI}/articles`
+    return  this.http.post(endopoint,newArticle);
   }
 }

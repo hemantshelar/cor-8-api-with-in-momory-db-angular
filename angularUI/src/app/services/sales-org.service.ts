@@ -1,20 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { appSettings } from '../Models/AppSettings';import { Observable } from 'rxjs';
-import { SalesOrg } from '../Models/SalesOrg';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SalesOrgService {
-  baseUrl: string = "";
 
   constructor(private http: HttpClient) {
-    this.baseUrl = appSettings.storesApi;
    }
 
   getSalesOrgs(): Observable<any> | undefined{
-    var endpoint = `${this.baseUrl}/salesorgs`
+    var endpoint = `${environment.storesAPI}/salesorgs`
     var result ;
     try{
       result = this.http.get(endpoint);
