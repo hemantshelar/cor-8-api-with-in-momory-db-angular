@@ -1,8 +1,10 @@
 export class AppSettings{
     storesApi: string = "";
+    storesApiSecured: string = "";
 }
 
 
 export const appSettings: AppSettings = {
-    storesApi: "https://localhost:7288/api/articles"
+    storesApiSecured: "https://localhost:7288/api",
+    storesApi: "http://localhost:5053/api"
 }

@@ -3,6 +3,10 @@ export class Article{
     name: string = "name";
     description: string = "";
     price: number = 0 ;
-
+    brand: string = "";
+    category: string = "";
+    size: string = "";
+    color: string = "";
     salesOrgId: number = 1;
+    image: string = "";
 }

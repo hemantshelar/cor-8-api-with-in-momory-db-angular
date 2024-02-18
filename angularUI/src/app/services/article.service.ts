@@ -9,10 +9,15 @@ import { appSettings } from '../Models/AppSettings';
   providedIn: 'root'
 })
 export class ArticleService {
+  baseUrl: string = "";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.baseUrl = appSettings.storesApi;
+   }
 
   saveArticle(newArticle: Article): Observable<any>{
+
+    var endopoint = `${this.baseUrl}\article`
     return  this.http.post(appSettings.storesApi,newArticle);
   }
 }

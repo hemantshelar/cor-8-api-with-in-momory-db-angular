@@ -11,12 +11,43 @@
         <label for="price">Unit Price</label>
         <input [(ngModel)]="newArticle.price" type="number" class="form-control">
     </div>
+    <div class="mb-3">
+        <label for="brand">Brand</label>
+        <input type="text" [(ngModel)]="newArticle.brand" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="category">Category</label>
+        <input type="text" [(ngModel)]="newArticle.category" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="size">Size</label>
+        <input type="text" [(ngModel)]="newArticle.size" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="image">Image</label>
+        <input type="text" [(ngModel)]="newArticle.image" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="color">Color</label>
+        <input type="text" [(ngModel)]="newArticle.color" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="salesOrgId">Sales Organization</label>
+        <input [(ngModel)]="newArticle.salesOrgId" type="number" class="form-control">
+    </div>
     <div class="container">
         <div class="row">
             <button class="btn btn-success"(click)="saveArticle()">Save</button>
         </div>
+        <div class="row mt-3">
+            <button class="btn btn-warning"(click)="loadData()">Load Manually</button>
+        </div>
     </div>
     <div>
         {{newArticle | json}}
+    </div>
+
+    <div>
+        {{this.existingSalesOrgs| json}}
     </div>
 </div>
